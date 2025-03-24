@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private LayerMask queEsSuelo;
     [SerializeField] private Transform controladorSuelo;
     [SerializeField] private Vector3 dimensionesCaja;
-
+    [SerializeField] private bool enSuelo;
     private bool saltando = false;
     private void Start()
     {
@@ -32,15 +32,21 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         movimientoHorizontal = Input.GetAxis("Horizontal") * velocidadDeMovimiento;
+        if (Input.GetButtonDown("Jump"))
+        {
+                saltando = true;
+        }
     }
 
     private void FixedUpdate()
     {
+        enSuelo = Physics2D.OverlapBox(controladorSuelo.position, dimensionesCaja, 0f, queEsSuelo);
         //mover
-        Mover(movimientoHorizontal * Time.fixedDeltaTime);
+        Mover(movimientoHorizontal * Time.fixedDeltaTime, saltando);
+        saltando = false;
     }
 
-    private void Mover(float moviendo) 
+    private void Mover(float moviendo, bool saltando) 
     {
         Vector3 velocidadObjetivo = new Vector2(moviendo, rb2D.velocity.y);
         rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, velocidadObjetivo, ref velocidad, SuavizadoDeMovimiento);
@@ -55,6 +61,11 @@ public class Movement : MonoBehaviour
             //girar
             Girar();
         }
+        if(enSuelo && saltando)
+        {
+            enSuelo = false;
+            rb2D.AddForce(new Vector2(0f, fuerzaDeSalto));
+        }
     }
 
     private void Girar()
@@ -65,4 +76,9 @@ public class Movement : MonoBehaviour
         transform.localScale = escala;
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(controladorSuelo.position, dimensionesCaja);
+    }
 }
