@@ -46,6 +46,9 @@ using UnityEngine;
 
 public class Linterna : MonoBehaviour
 {
+    public AudioSource src;
+    public AudioClip sound;
+
     public float fadeSpeed = 2f; // Speed of fade-in effect
 
     private void Update()
@@ -90,6 +93,8 @@ public class Linterna : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        src.clip = sound;
+        src.Play();
         // Make sure objects start invisible & stationary if needed
         if (collision.CompareTag("Bola") || collision.CompareTag("Objeto"))
         {
