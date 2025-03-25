@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform controladorSuelo;
     [SerializeField] private Vector3 dimensionesCaja;
     [SerializeField] private bool enSuelo;
-    private bool saltando = false;
+    [SerializeField] private bool saltando = false;
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         movimientoHorizontal = Input.GetAxis("Horizontal") * velocidadDeMovimiento;
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && enSuelo)
         {
                 saltando = true;
         }

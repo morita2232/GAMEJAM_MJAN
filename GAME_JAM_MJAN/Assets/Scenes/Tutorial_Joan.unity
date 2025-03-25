@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &78006777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 78006778}
+  m_Layer: 0
+  m_Name: Controlador Suelo P1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &78006778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78006777}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0000015869737, y: -1.0000001, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 222239598}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &121673038
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +166,7 @@ GameObject:
   - component: {fileID: 121673042}
   - component: {fileID: 121673041}
   - component: {fileID: 121673040}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Suelo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +327,7 @@ GameObject:
   - component: {fileID: 222239603}
   m_Layer: 0
   m_Name: P1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -312,7 +343,8 @@ Transform:
   m_LocalPosition: {x: -22.789406, y: 1.6618265, z: 0.22584267}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 78006778}
   m_Father: {fileID: 461320532}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -331,7 +363,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -407,14 +439,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02512e81fa764494982b3f64635b33ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadDeMovimiento: 400
-  SuavizadoDeMovimiento: 0.3
-  fuerzaDeSalto: 0
+  velocidadDeMovimiento: 300
+  SuavizadoDeMovimiento: 0.07
+  fuerzaDeSalto: 400
   queEsSuelo:
     serializedVersion: 2
-    m_Bits: 0
-  controladorSuelo: {fileID: 0}
-  dimensionesCaja: {x: 0, y: 0, z: 0}
+    m_Bits: 8
+  controladorSuelo: {fileID: 78006778}
+  dimensionesCaja: {x: 1, y: 0.2, z: 0}
+  enSuelo: 1
+  saltando: 0
 --- !u!61 &222239603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -669,6 +703,7 @@ GameObject:
   - component: {fileID: 456650507}
   - component: {fileID: 456650506}
   - component: {fileID: 456650505}
+  - component: {fileID: 456650508}
   m_Layer: 0
   m_Name: Trampolin
   m_TagString: Untagged
@@ -815,6 +850,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &456650508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456650503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e99ef8e8c112d840818eba815ff680d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceForce: -12
 --- !u!1 &461320531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,7 +1437,7 @@ GameObject:
   - component: {fileID: 1014346580}
   m_Layer: 0
   m_Name: P2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1405,7 +1453,8 @@ Transform:
   m_LocalPosition: {x: -22.789406, y: -0.8381735, z: 0.22584267}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1020010551}
   m_Father: {fileID: 461320532}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1424,7 +1473,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -1
+  m_GravityScale: -2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1500,14 +1549,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02512e81fa764494982b3f64635b33ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadDeMovimiento: 400
-  SuavizadoDeMovimiento: 0.3
-  fuerzaDeSalto: 0
+  velocidadDeMovimiento: 300
+  SuavizadoDeMovimiento: 0.07
+  fuerzaDeSalto: -400
   queEsSuelo:
     serializedVersion: 2
-    m_Bits: 0
-  controladorSuelo: {fileID: 0}
-  dimensionesCaja: {x: 0, y: 0, z: 0}
+    m_Bits: 8
+  controladorSuelo: {fileID: 1020010551}
+  dimensionesCaja: {x: 1, y: 0.2, z: 0}
+  enSuelo: 0
+  saltando: 0
 --- !u!61 &1014346580
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1553,6 +1604,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!1 &1020010550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1020010551}
+  m_Layer: 0
+  m_Name: Controlador Suelo P2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1020010551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020010550}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0000015869737, y: 1.0000002, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1014346575}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1036962480
 GameObject:
   m_ObjectHideFlags: 0
