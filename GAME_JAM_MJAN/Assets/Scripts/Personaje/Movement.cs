@@ -4,6 +4,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb2D;
+    public Animator animator;
 
     [Header("Movimiento")]
 
@@ -24,6 +25,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Vector3 dimensionesCaja;
     [SerializeField] private bool enSuelo;
     [SerializeField] private bool saltando = false;
+
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -32,10 +34,14 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         movimientoHorizontal = Input.GetAxis("Horizontal") * velocidadDeMovimiento;
+
+        
+
         if (Input.GetButtonDown("Jump") && enSuelo)
         {
-                saltando = true;
+            saltando = true;
         }
+        
     }
 
     private void FixedUpdate()
@@ -66,6 +72,8 @@ public class Movement : MonoBehaviour
             enSuelo = false;
             rb2D.AddForce(new Vector2(0f, fuerzaDeSalto));
         }
+        animator.SetBool("isJumping", enSuelo);
+        animator.SetBool("isMoving", moviendo != 0);
     }
 
     private void Girar()
