@@ -18,7 +18,7 @@ public class MenuPrincipal : MonoBehaviour
     */
     public void Inicio()
     {
-        SceneManager.LoadScene("Nivel_1");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void Salir()
