@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 62558e81e22ec0645af3340bf06ecc16
+  - enabled: 1
+    path: Assets/Scenes/Controles.unity
+    guid: ac0434f33beb84a41bd217a8ec1b5755
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: bfe8f532ab1071f44abc1edfd04c51a0
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: e041759df33e08a429cbc844c7a00892
+  - enabled: 1
+    path: Assets/Scenes/Nivel_1_Morita.unity
+    guid: 3a8a29a3d42eba948ba82fb2ba806768
+  - enabled: 1
+    path: Assets/Scenes/Nivel_3_Joan.unity
+    guid: 533ac4d259209d54eb758496cbe19da7
   m_configObjects: {}

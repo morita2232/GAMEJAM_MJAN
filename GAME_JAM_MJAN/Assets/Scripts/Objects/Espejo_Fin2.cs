@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Espejo_Fin : MonoBehaviour
+public class Espejo_Fin2 : MonoBehaviour
 {
 
 
@@ -23,7 +23,7 @@ public class Espejo_Fin : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Nivel_1_Morita");
+            SceneManager.LoadScene("Nivel_3_Joan");
         }
     }
 }

@@ -4706,6 +4706,7 @@ GameObject:
   - component: {fileID: 1486466601}
   - component: {fileID: 1486466603}
   - component: {fileID: 1486466602}
+  - component: {fileID: 1486466604}
   m_Layer: 0
   m_Name: Espejo_Final (1)
   m_TagString: Untagged
@@ -4852,6 +4853,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8828125, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1486466604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486466599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3164efdf31559874381d8c1cd0f4db29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1491521552
 GameObject:
   m_ObjectHideFlags: 0
@@ -5195,6 +5208,7 @@ GameObject:
   - component: {fileID: 1533152319}
   - component: {fileID: 1533152321}
   - component: {fileID: 1533152320}
+  - component: {fileID: 1533152322}
   m_Layer: 0
   m_Name: Espejo_Final
   m_TagString: Untagged
@@ -5341,6 +5355,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8828125, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1533152322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533152317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3164efdf31559874381d8c1cd0f4db29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1644648306
 GameObject:
   m_ObjectHideFlags: 0
