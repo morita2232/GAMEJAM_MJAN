@@ -7,7 +7,9 @@ public class Bolas : MonoBehaviour
 
     public Rigidbody2D rb;
     public GameObject bola;
-    public Agarrar_pelota array;
+    public Agarrar_pelota_P1 array;
+    public Agarrar_pelota arrayP2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,7 @@ public class Bolas : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Q) && array.pelotaMia.Count <= 0)
         {
+            arrayP2.pelotaMia.Add(bola);
             array.pelotaMia.Add(bola);
             Destroy(gameObject);
         }
