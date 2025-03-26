@@ -21,6 +21,10 @@ public class MenuPrincipal : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
     }
 
+    public void Controles()
+    {
+        SceneManager.LoadScene("Controles");
+    }
     public void Creditos()
     {
         SceneManager.LoadScene("Creditos");
