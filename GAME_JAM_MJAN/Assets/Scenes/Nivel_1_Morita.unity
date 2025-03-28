@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 472551519}
   - component: {fileID: 472551521}
   - component: {fileID: 472551520}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plataforma_IM7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6664,7 +6664,7 @@ GameObject:
   - component: {fileID: 1907622371}
   - component: {fileID: 1907622373}
   - component: {fileID: 1907622372}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plataforma_VM7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6855,7 +6855,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
