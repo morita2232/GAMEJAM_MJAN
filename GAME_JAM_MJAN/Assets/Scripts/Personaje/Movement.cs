@@ -25,6 +25,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private Vector3 dimensionesCaja;
     [SerializeField] private bool enSuelo;
     [SerializeField] private bool saltando = false;
+    [SerializeField] private AudioSource jump;
+    [SerializeField] private AudioClip jumpSound; 
+    [SerializeField] private AudioSource pop;
+    [SerializeField] private AudioClip popSound;
 
     private void Start()
     {
@@ -71,9 +75,15 @@ public class Movement : MonoBehaviour
         {
             enSuelo = false;
             rb2D.AddForce(new Vector2(0f, fuerzaDeSalto));
+            jump.PlayOneShot(jumpSound);
         }
         animator.SetBool("isJumping", enSuelo);
         animator.SetBool("isMoving", moviendo != 0);
+    }
+
+    public void PlayPopSound()
+    {
+        pop.PlayOneShot(popSound);
     }
 
     private void Girar()
