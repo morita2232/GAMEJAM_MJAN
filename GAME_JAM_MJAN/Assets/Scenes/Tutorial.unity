@@ -1299,6 +1299,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puerta_Uno: {fileID: 1100354042}
   puerta_Dos: {fileID: 1018503621}
+  pickupSound: {fileID: 8300000, guid: f6c4062a9b51bc94d9a656b24cdd73be, type: 3}
+  doorOpenSound: {fileID: 8300000, guid: c391388c5bb0cef4b85dc0d5edc1fda6, type: 3}
+  mixer: {fileID: 24100000, guid: bec0be49e02fdc941a710eeb440fa405, type: 2}
+  breezeSource: {fileID: 1757343300}
 --- !u!1 &456650503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceForce: 12
+  bounceSound: {fileID: 8300000, guid: 28a28e12d0587a14ab5d49306ce6e056, type: 3}
 --- !u!4 &461320532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6113559149376521438, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
@@ -1493,6 +1498,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 649413459}
     - target: {fileID: 3019045165618078415, guid: 655e2675f3ac8bb498fc6a34fea66b1a, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: bec0be49e02fdc941a710eeb440fa405, type: 2}
+    - target: {fileID: 3019045165618078415, guid: 655e2675f3ac8bb498fc6a34fea66b1a, type: 3}
       propertyPath: newsr
       value: 
       objectReference: {fileID: 1490370462, guid: 483f75300d3a84843a1528c180fb663f, type: 3}
@@ -1504,6 +1513,14 @@ PrefabInstance:
       propertyPath: paredDos
       value: 
       objectReference: {fileID: 1019951109}
+    - target: {fileID: 3019045165618078415, guid: 655e2675f3ac8bb498fc6a34fea66b1a, type: 3}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 46a769f94ec1a7342bab322d531d2f1f, type: 3}
+    - target: {fileID: 3019045165618078415, guid: 655e2675f3ac8bb498fc6a34fea66b1a, type: 3}
+      propertyPath: breezeSource
+      value: 
+      objectReference: {fileID: 1757343300}
     - target: {fileID: 3454620950809521365, guid: 655e2675f3ac8bb498fc6a34fea66b1a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1790,7 +1807,7 @@ AudioSource:
   m_GameObject: {fileID: 845673429}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7757240958650180014, guid: bec0be49e02fdc941a710eeb440fa405, type: 2}
+  OutputAudioMixerGroup: {fileID: -7641296813731635167, guid: bec0be49e02fdc941a710eeb440fa405, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3cce080fd721cc44286794eda5b90161, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2662,7 +2679,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7641296813731635167, guid: bec0be49e02fdc941a710eeb440fa405, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10817,7 +10834,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -7641296813731635167, guid: bec0be49e02fdc941a710eeb440fa405, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10948,6 +10965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceForce: 12
+  bounceSound: {fileID: 8300000, guid: 28a28e12d0587a14ab5d49306ce6e056, type: 3}
 --- !u!50 &1509572296
 Rigidbody2D:
   serializedVersion: 4
@@ -11258,7 +11276,7 @@ AudioSource:
   m_GameObject: {fileID: 1642489828}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 7757240958650180014, guid: bec0be49e02fdc941a710eeb440fa405, type: 2}
+  OutputAudioMixerGroup: {fileID: -7641296813731635167, guid: bec0be49e02fdc941a710eeb440fa405, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3cce080fd721cc44286794eda5b90161, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -11448,7 +11466,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -12683,6 +12701,7 @@ GameObject:
   - component: {fileID: 2136495791}
   - component: {fileID: 2136495790}
   - component: {fileID: 2136495789}
+  - component: {fileID: 2136495792}
   m_Layer: 3
   m_Name: Caja V
   m_TagString: Bola
@@ -12829,6 +12848,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2136495792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136495787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9624e0d7379f2754cb4a298f07cffbc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushSound: {fileID: 8300000, guid: 7ab4f74d88a283343bf5e8c36133d388, type: 3}
 --- !u!1001 &1315709107728997645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12838,9 +12870,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1823411469}
     m_Modifications:
     - target: {fileID: 629861429665355032, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
+      propertyPath: pop
+      value: 
+      objectReference: {fileID: 1397178833}
+    - target: {fileID: 629861429665355032, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
       propertyPath: jump
       value: 
       objectReference: {fileID: 1397178833}
+    - target: {fileID: 629861429665355032, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
+      propertyPath: popSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ed4be98024664364b95bd05130a6aaa4, type: 3}
     - target: {fileID: 629861429665355032, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
       propertyPath: jumpSound
       value: 
@@ -12854,13 +12894,21 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4560429663204320195, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
+      propertyPath: pop
+      value: 
+      objectReference: {fileID: 1244843006}
+    - target: {fileID: 4560429663204320195, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
       propertyPath: jump
       value: 
       objectReference: {fileID: 1244843006}
     - target: {fileID: 4560429663204320195, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
+      propertyPath: popSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ed4be98024664364b95bd05130a6aaa4, type: 3}
+    - target: {fileID: 4560429663204320195, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
       propertyPath: jumpSound
       value: 
-      objectReference: {fileID: 8300000, guid: 216203b196490cd49b632d8530a18a0c, type: 3}
+      objectReference: {fileID: 8300000, guid: e7e008b9af924954082ec8097d71840d, type: 3}
     - target: {fileID: 6113559149376521438, guid: 7ba78a1de487ccf45a23399d8682226b, type: 3}
       propertyPath: m_RootOrder
       value: -1
