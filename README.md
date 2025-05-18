@@ -5,6 +5,9 @@ This project showcases the implementation of interactive audio systems in Unity,
 > ⚠️ **Note to Professor:**  
 All audio features are implemented **only in the scene named `Tutorial`**. Please ignore any other scenes — they are not part of the assignment submission.
 
+> 🔁 **Important:**  
+Please review **only the branch named `SebastianMoraBermejo-AA3-Unity-Integration`** in the repository. Other branches may contain outdated or unrelated versions.
+
 ## ✅ Implemented Features in `Tutorial` Scene
 
 - **12+ Audio Sources** with spatialization and variation.
@@ -34,3 +37,4 @@ All audio features are implemented **only in the scene named `Tutorial`**. Pleas
 ---
 
 Thank you!
+
