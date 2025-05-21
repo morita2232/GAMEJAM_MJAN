@@ -1,35 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Boton : MonoBehaviour
 {
-
     public GameObject pared;
     public GameObject paredDos;
-    public SpriteRenderer sr;    
-    public Sprite newsr;    
+    public SpriteRenderer sr;
+    public Sprite newsr;
 
-    // Start is called before the first frame update
+    [Header("Audio Control")]
+    public AudioClip buttonSound;
+    public AudioMixer mixer;
+    public AudioSource breezeSource;
+
+    private bool triggered = false;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Bola")
+        if (!triggered && (collision.CompareTag("Player") || collision.CompareTag("Bola")))
         {
-            Destroy(pared);           
+            triggered = true;
+
+            AudioSource.PlayClipAtPoint(buttonSound, transform.position);
+
+            Destroy(pared);
             Destroy(paredDos);
             sr.sprite = newsr;
+
+            mixer.FindSnapshot("Breeze").TransitionTo(1f);
+            breezeSource.Play();
         }
     }
-
 }
+
